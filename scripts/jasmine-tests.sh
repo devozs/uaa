@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
-set -xeu
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+set -eu -o pipefail
 
-pushd ${SCRIPT_DIR}/../uaa
+UAA_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+
+pushd "${UAA_DIR}"
   npm install
   npm test
 popd
