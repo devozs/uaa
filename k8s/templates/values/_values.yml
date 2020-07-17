@@ -27,7 +27,7 @@ database:
   scheme: postgresql
   username: uaa
   password: postgres1!
-  url: jdbc:postgresql://uaa-postgres.postgres.database.azure.com:5432/{your_database}?user=uaa@uaa-postgres&password={your_password}&sslmode=require
+  url: jdbc:postgresql://uaa-postgres.postgres.database.azure.com:5432/uaa_postgres?user=uaa@uaa-postgres&password=postgres1!&sslmode=require
 
 jwt:
   policy:
