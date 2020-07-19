@@ -145,6 +145,7 @@ public class LoginInfoEndpoint {
             );
 
     public LoginInfoEndpoint(
+            
             final @Qualifier("zoneAwareAuthzAuthenticationManager") AuthenticationManager authenticationManager,
             final @Qualifier("codeStore") ExpiringCodeStore expiringCodeStore,
             final @Value("${login.url:''}") String externalLoginUrl,
@@ -181,6 +182,9 @@ public class LoginInfoEndpoint {
 
     @RequestMapping(value = {"/login"}, headers = "Accept=application/json")
     public String infoForLoginJson(Model model, Principal principal, HttpServletRequest request) {
+        logger.debug("Ozs message LoginInfoEndPoint");
+        System.out.println("Ozs message LoginInfoEndPoint");
+
         return login(model, principal, Collections.emptyList(), true, request);
     }
 
@@ -260,6 +264,9 @@ public class LoginInfoEndpoint {
     }
 
     private String login(Model model, Principal principal, List<String> excludedPrompts, boolean jsonResponse, HttpServletRequest request) {
+        logger.debug("Ozs message LoginInfoEndPoint");
+        System.out.println("Ozs message LoginInfoEndPoint");
+
         if (principal instanceof UaaAuthentication && ((UaaAuthentication) principal).isAuthenticated()) {
             return "redirect:/home";
         }
