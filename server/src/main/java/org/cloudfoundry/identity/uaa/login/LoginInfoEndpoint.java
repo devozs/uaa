@@ -145,7 +145,7 @@ public class LoginInfoEndpoint {
             );
 
     public LoginInfoEndpoint(
-            
+
             final @Qualifier("zoneAwareAuthzAuthenticationManager") AuthenticationManager authenticationManager,
             final @Qualifier("codeStore") ExpiringCodeStore expiringCodeStore,
             final @Value("${login.url:''}") String externalLoginUrl,

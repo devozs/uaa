@@ -6,7 +6,7 @@
 trigger:
 - master
 
-pool:SamlLoginServerKeyManagerTests
+pool:
   vmImage: 'ubuntu-latest'
 
 steps:
@@ -44,7 +44,7 @@ steps:
   displayName: Running Integration Tests with Docker
   inputs:
     targetType: 'inline'
-    script: 'sh run-integration-tests-ci.sh postgresql'
+#    script: 'sh run-integration-tests-ci.sh postgresql'
 
 - task: PublishPipelineArtifact@1
   inputs:
